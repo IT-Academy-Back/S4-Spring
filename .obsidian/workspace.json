@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "b85359749bf45213",
+    "type": "split",
+    "children": [
+      {
+        "id": "66d08b49d2983cb4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c6e161e6f006a02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "S4-02-Api_Rest_amb Spring_boot.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "S4-02-Api_Rest_amb Spring_boot"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "873540879b25d447",
+    "type": "split",
+    "children": [
+      {
+        "id": "843af0c881452aa4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "508039dc97d4a7a1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "5ed52ddbe58aa481",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "b716fcae72b31caa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0f55f6b5a6e7e12e",
+    "type": "split",
+    "children": [
+      {
+        "id": "c0a20c3a814d5866",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a2ef5ef5c8814fad",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "S4-02-Api_Rest_amb Spring_boot.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de S4-02-Api_Rest_amb Spring_boot"
+            }
+          },
+          {
+            "id": "063981a142d6399b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "S4-02-Api_Rest_amb Spring_boot.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de S4-02-Api_Rest_amb Spring_boot"
+            }
+          },
+          {
+            "id": "98dfcad3e51ce618",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "842232a170bb5279",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "S4-02-Api_Rest_amb Spring_boot.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de S4-02-Api_Rest_amb Spring_boot"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "0c6e161e6f006a02",
+  "lastOpenFiles": []
+}
