@@ -65,13 +65,13 @@ cat.itacademy.s04.t02.n01.exception
 
 ### 🌐 Endpoints esperats
 
-| Mètode | Endpoint              | Descripció                |
-|--------|-----------------------|---------------------------|
-| POST   | `/fruita/add`         | Crear fruita              |
-| PUT    | `/fruita/update`      | Actualitzar fruita        |
-| DELETE | `/fruita/delete/{id}` | Eliminar per id           |
-| GET    | `/fruita/getOne/{id}` | Obtenir una fruita per id |
-| GET    | `/fruita/getAll`      | Obtenir totes les fruites |
+| Mètode | Endpoint       | Descripció                |
+|--------|----------------|---------------------------|
+| POST   | `/fruits`      | Crear fruita              |
+| PUT    | `/fruits/{id}` | Actualitzar fruita        |
+| DELETE | `/fruits/{id}` | Eliminar per id           |
+| GET    | `/fruits/{id}` | Obtenir una fruita per id |
+| GET    | `/fruits`      | Obtenir totes les fruites |
 
 ---
 
