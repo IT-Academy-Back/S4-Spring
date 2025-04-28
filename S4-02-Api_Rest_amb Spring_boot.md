@@ -77,10 +77,15 @@ cat.itacademy.s04.t02.n01.exception
 
 ### ⚠️ Important
 
-Hauràs de tenir en compte les bones pràctiques de disseny de les API, fent servir correctament els codis d'error i les
-respostes en cas d'invocacions incorrectes. (Pots consultar informació sobre ResponseEntity). A més, és necessari
-implementar un GlobalExceptionHandler per gestionar les excepcions globalment a l'aplicació. Això permetrà capturar i
-tractar errors de manera centralitzada, millorant la robustesa i la coherència en la gestió de les excepcions.
+- Hauràs de tenir en compte les bones pràctiques de disseny de les API, fent servir correctament els codis d'error i les
+  respostes en cas d'invocacions incorrectes. (Pots consultar informació sobre ResponseEntity).
+
+- Hauràs d'implementar un GlobalExceptionHandler per gestionar les excepcions globalment a l'aplicació. Això permetrà
+  capturar i
+  tractar errors de manera centralitzada, millorant la robustesa i la coherència en la gestió de les excepcions.
+
+- També hauràs de crear un `Dockerfile` per al projecte, que permeti construir una imatge preparada per a entorns de
+  producció.
 
 ### ⚠️ Molt Important
 
