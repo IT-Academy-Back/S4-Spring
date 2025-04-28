@@ -2,9 +2,21 @@
 
 ## 📝 Descripció
 
-En aquesta tasca faràs un **CRUD (Create, Read, Update, Delete)** amb 3 bases de dades diferents.
+En aquesta tasca desenvoluparàs tres aplicacions Spring Boot independents, cadascuna amb un CRUD complet
+(Create, Read, Update, Delete) sobre una entitat, utilitzant tres bases de dades diferents: H2, MySQL i MongoDB.
 
-Aprendràs a usar correctament els verbs HTTP i a gestionar els codis de resposta.
+A través d’aquesta pràctica aprendràs a:
+
+- Crear APIs REST utilitzant Spring Boot.
+- Gestionar la persistència de dades amb Spring Data JPA i Spring Data MongoDB.
+- Aplicar correctament els verbs HTTP (`GET`, `POST`, `PUT`, `DELETE`) i gestionar adequadament els codis d'estat de les
+  respostes.
+- Implementar un `GlobalExceptionHandler` per gestionar les excepcions de manera centralitzada.
+- Estructurar correctament el projecte segons el patró MVC (Model-View-Controller).
+- Crear un `Dockerfile` per empaquetar el projecte en una imatge Docker preparada per a entorns de producció.
+- Configurar la connexió a bases de dades a través de variables d'entorn.
+
+Cada nivell correspondrà a un projecte diferent, amb les seves pròpies configuracions i especificacions.
 
 ---
 
@@ -17,15 +29,15 @@ característiques:
 
 | Paràmetre           | Valor                       |
 |---------------------|-----------------------------|
-| **PROJECT**         | Maven o Gradle              |
-| **LANGUAGE**        | Java                        |
-| **SPRING BOOT**     | La darrera versió estable   |
-| **Group**           | `cat.itacademy.s04.t02.n01` |
-| **Artifact / Name** | `S04T02N01`                 |
-| **Description**     | `S04T02N01GognomsNom`       |
-| **Package name**    | `cat.itacademy.s04.t02.n01` |
-| **PACKAGING**       | Jar                         |
-| **JAVA**            | Mínim versió 21             |
+| PROJECT         | Maven o Gradle              |
+| LANGUAGE        | Java                        |
+| SPRING BOOT     | La darrera versió estable   |
+| Group           | `cat.itacademy.s04.t02.n01` |
+| Artifact / Name | `S04T02N01`                 |
+| Description     | `S04T02N01GognomsNom`       |
+| Package name    | `cat.itacademy.s04.t02.n01` |
+| PACKAGING       | Jar                         |
+| JAVA            | Mínim versió 21             |
 
 ### 📦 Dependències
 
@@ -105,15 +117,15 @@ característiques:
 
 | Paràmetre           | Valor                       |
 |---------------------|-----------------------------|
-| **PROJECT**         | Maven o Gradle              |
-| **LANGUAGE**        | Java                        |
-| **SPRING BOOT**     | La darrera versió estable   |
-| **Group**           | `cat.itacademy.s04.t02.n02` |
-| **Artifact / Name** | `S04T02N02`                 |
-| **Description**     | `S04T02N02`                 |
-| **Package name**    | `cat.itacademy.s04.t02.n02` |
-| **PACKAGING**       | Jar                         |
-| **JAVA**            | Mínim versió 21             |
+| PROJECT         | Maven o Gradle              |
+| LANGUAGE        | Java                        |
+| SPRING BOOT     | La darrera versió estable   |
+| Group           | `cat.itacademy.s04.t02.n02` |
+| Artifact / Name | `S04T02N02`                 |
+| Description     | `S04T02N02`                 |
+| Package name    | `cat.itacademy.s04.t02.n02` |
+| PACKAGING       | Jar                         |
+| JAVA            | Mínim versió 21             |
 
 ### 📦 Dependències
 
@@ -141,15 +153,15 @@ característiques:
 
 | Paràmetre           | Valor                       |
 |---------------------|-----------------------------|
-| **PROJECT**         | Maven o Gradle              |
-| **LANGUAGE**        | Java                        |
-| **SPRING BOOT**     | La darrera versió estable   |
-| **Group**           | `cat.itacademy.s04.t02.n03` |
-| **Artifact / Name** | `S04T02N03`                 |
-| **Description**     | `S04T02N03`                 |
-| **Package name**    | `cat.itacademy.s04.t02.n03` |
-| **PACKAGING**       | Jar                         |
-| **JAVA**            | Mínim versió 21             |
+| PROJECT         | Maven o Gradle              |
+| LANGUAGE        | Java                        |
+| SPRING BOOT     | La darrera versió estable   |
+| Group           | `cat.itacademy.s04.t02.n03` |
+| Artifact / Name | `S04T02N03`                 |
+| Description     | `S04T02N03`                 |
+| Package name    | `cat.itacademy.s04.t02.n03` |
+| PACKAGING       | Jar                         |
+| JAVA            | Mínim versió 21             |
 
 ### 📦 Dependències
 
