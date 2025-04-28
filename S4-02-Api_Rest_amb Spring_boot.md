@@ -25,7 +25,7 @@ característiques:
 | **Description**     | `S04T02N01GognomsNom`       |
 | **Package name**    | `cat.itacademy.s04.t02.n01` |
 | **PACKAGING**       | Jar                         |
-| **JAVA**            | Mínim versió 11             |
+| **JAVA**            | Mínim versió 21             |
 
 ### 📦 Dependències
 
@@ -108,7 +108,7 @@ característiques:
 | **Description**     | `S04T02N02`                 |
 | **Package name**    | `cat.itacademy.s04.t02.n02` |
 | **PACKAGING**       | Jar                         |
-| **JAVA**            | Mínim versió 11             |
+| **JAVA**            | Mínim versió 21             |
 
 ### 📦 Dependències
 
@@ -144,7 +144,7 @@ característiques:
 | **Description**     | `S04T02N03`                 |
 | **Package name**    | `cat.itacademy.s04.t02.n03` |
 | **PACKAGING**       | Jar                         |
-| **JAVA**            | Mínim versió 11             |
+| **JAVA**            | Mínim versió 21             |
 
 ### 📦 Dependències
 
