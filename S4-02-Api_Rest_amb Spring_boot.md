@@ -2,15 +2,13 @@
 
 ## 📝 Descripció
 
-En aquesta tasca desenvoluparàs tres aplicacions Spring Boot independents, cadascuna amb un CRUD complet
-(Create, Read, Update, Delete) sobre una entitat, utilitzant tres bases de dades diferents: H2, MySQL i MongoDB.
+En aquesta tasca desenvoluparàs tres aplicacions Spring Boot independents, cadascuna serà una API REST amb un CRUD complet (Create, Read, Update, Delete) sobre una entitat, utilitzant tres bases de dades diferents: H2, MySQL i MongoDB.
 
 A través d’aquesta pràctica aprendràs a:
 
 - Crear APIs REST utilitzant Spring Boot.
 - Gestionar la persistència de dades amb Spring Data JPA i Spring Data MongoDB.
-- Aplicar correctament els verbs HTTP (`GET`, `POST`, `PUT`, `DELETE`) i gestionar adequadament els codis d'estat de les
-  respostes.
+- Aplicar correctament els verbs HTTP (`GET`, `POST`, `PUT`, `DELETE`) i gestionar adequadament els codis d'estat de les respostes.
 - Implementar un `GlobalExceptionHandler` per gestionar les excepcions de manera centralitzada.
 - Estructurar correctament el projecte segons el patró MVC (Model-View-Controller).
 - Crear un `Dockerfile` per empaquetar el projecte en una imatge Docker preparada per a entorns de producció.
@@ -22,13 +20,15 @@ Cada nivell correspondrà a un projecte diferent, amb les seves pròpies configu
 
 ## ⭐ Nivell 1 — Exercici CRUD amb H2
 
+En aquest primer nivell traballarem amb una base de dades SQL en memoria. Molt usada per a desenvolupament ràpid i test.
+
 Accedeix a 👉 [https://start.spring.io/](https://start.spring.io/) i genera un projecte Spring Boot amb les següents
 característiques:
 
 ### ⚙️ Configuració del projecte
 
-| Paràmetre           | Valor                       |
-|---------------------|-----------------------------|
+| Paràmetre       | Valor                       |
+|-----------------|-----------------------------|
 | PROJECT         | Maven o Gradle              |
 | LANGUAGE        | Java                        |
 | SPRING BOOT     | La darrera versió estable   |
@@ -48,22 +48,17 @@ característiques:
 
 ---
 
-### 🍏 Entitat: `Fruita`
+### 🧩 Enunciat
 
-Tenim una entitat anomenada "Fruita", que disposa de les següents propietats:
+Treballaràs amb una entitat anomenada **Fruit**, que tindrà les propietats següents:
 
-| Camp              | Tipus    |
-|-------------------|----------|
-| `id`              | `int`    |
-| `nom`             | `String` |
-| `quantitatQuilos` | `int`    |
+- `Long id`
+- `String name`
+- `int weightInKilos`
 
----
+Aprofitant l'especificació **JPA**, hauràs de persistir aquesta entitat en una base de dades **H2**, seguint l'arquitectura **MVC**.  
 
-### 🧱 Estructura de packages (seguint MVC + excepcions)
-
-Aprofitant l’especificació JPA, hauràs de persistir aquesta entitat a una base de dades H2, seguint el patró MVC.
-Per a això, depenent del Package principal, crearàs una estructura de packages, on ubicaràs les classes que necessitis:
+Organitza el projecte creant els packages següents, segons el teu package principal:
 
 ```
 cat.itacademy.s04.t02.n01.controllers
@@ -73,7 +68,7 @@ cat.itacademy.s04.t02.n01.repository
 cat.itacademy.s04.t02.n01.exception
 ```
 
----
+La classe ubicada dins el package `controllers` (**FruitController**, per exemple) haurà de ser capaç de gestionar les següents operacions a través d'**endpoints** REST:
 
 ### 🌐 Endpoints esperats
 
@@ -89,22 +84,11 @@ cat.itacademy.s04.t02.n01.exception
 
 ### ⚠️ Important
 
-- Hauràs de tenir en compte les bones pràctiques de disseny de les API, fent servir correctament els codis d'error i les
-  respostes en cas d'invocacions incorrectes. (Pots consultar informació sobre ResponseEntity).
+- Hauràs de tenir en compte les bones pràctiques de disseny de les API, fent servir correctament els codis d'error i les respostes en cas d'invocacions incorrectes. (Pots consultar informació sobre ResponseEntity).
 
-- Hauràs d'implementar un GlobalExceptionHandler per gestionar les excepcions globalment a l'aplicació. Això permetrà
-  capturar i
-  tractar errors de manera centralitzada, millorant la robustesa i la coherència en la gestió de les excepcions.
+- Hauràs d'implementar un GlobalExceptionHandler per gestionar les excepcions globalment a l'aplicació. Això permetrà capturar i tractar errors de manera centralitzada, millorant la robustesa i la coherència en la gestió de les excepcions.
 
-- També hauràs de crear un `Dockerfile` per al projecte, que permeti construir una imatge preparada per a entorns de
-  producció.
-
-### ⚠️ Molt Important
-
-A més de l’enllaç a Git de la tasca resolta, hauràs d’incloure almenys dos enllaços diferents dels recursos que t’hem
-proporcionat al campus, que t’hagin servit o ho haguessin pogut fer, per resoldre la totalitat de la tasca o algunes
-parts.
-
+- També hauràs de crear un `Dockerfile` per al projecte, que permeti construir una imatge preparada per a entorns de producció.
 
 ---
 
@@ -115,8 +99,8 @@ característiques:
 
 ### ⚙️ Configuració del projecte
 
-| Paràmetre           | Valor                       |
-|---------------------|-----------------------------|
+| Paràmetre       | Valor                       |
+|-----------------|-----------------------------|
 | PROJECT         | Maven o Gradle              |
 | LANGUAGE        | Java                        |
 | SPRING BOOT     | La darrera versió estable   |
@@ -151,8 +135,8 @@ característiques:
 
 ### ⚙️ Configuració del projecte
 
-| Paràmetre           | Valor                       |
-|---------------------|-----------------------------|
+| Paràmetre       | Valor                       |
+|-----------------|-----------------------------|
 | PROJECT         | Maven o Gradle              |
 | LANGUAGE        | Java                        |
 | SPRING BOOT     | La darrera versió estable   |
