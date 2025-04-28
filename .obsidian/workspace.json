@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0c6e161e6f006a02",
+            "id": "29fb3393353162af",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,6 +168,6 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "0c6e161e6f006a02",
+  "active": "29fb3393353162af",
   "lastOpenFiles": []
 }
