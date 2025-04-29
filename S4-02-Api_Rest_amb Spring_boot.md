@@ -48,6 +48,62 @@ característiques:
 
 ---
 
+### 📖 Històries d'usuari
+
+1. **Crear una fruita nova**
+
+> **Com a** fruiter,  
+> **vull** poder registrar una nova fruita amb el seu nom i pes en quilos,  
+> **per a** tenir control de les entrades al rebost.
+
+2. **Consultar totes les fruites**
+
+> **Com a** fruiter,  
+> **vull** poder veure una llista de totes les fruites registrades,  
+> **per a** consultar ràpidament l'estoc disponible.
+
+3. **Consultar una fruita concreta**
+
+> **Com a** fruiter,  
+> **vull** poder consultar la informació d'una fruita concreta a partir del seu identificador,  
+> **per a** veure els detalls d'una entrada específica.
+
+4. **Editar una fruita**
+
+> **Com a** fruiter,  
+> **vull** poder actualitzar el nom o el pes d'una fruita,  
+> **per a** corregir errors d'entrada de dades.
+
+5. **Eliminar una fruita**
+
+> **Com a** fruiter,  
+> **vull** poder eliminar una fruita a partir del seu identificador,  
+> **per a** mantenir el rebost actualitzat.
+
+---
+
+### ✅ Criteris d'acceptació
+
+- Quan creo una fruita amb un nom vàlid i un pes positiu, el sistema ha de retornar un codi **HTTP 201 Created** i el detall de la fruita creada en format JSON.
+    
+- Si intento crear una fruita amb un **nom que ja existeix**, el sistema ha de retornar un error **HTTP 409 Conflict** amb un missatge indicant que la fruita ja està registrada.
+    
+- Si intento crear una fruita amb un **nom buit** o un **pes negatiu o zero**, el sistema ha de retornar un error **HTTP 400 Bad Request**.
+    
+- Quan faig una petició per obtenir totes les fruites (`GET /fruits`), el sistema ha de retornar un **HTTP 200 OK** i un array JSON amb totes les fruites existents.
+    
+- Quan faig una petició per obtenir una fruita concreta (`GET /fruits/{id}`) amb un ID vàlid, el sistema ha de retornar un **HTTP 200 OK** amb la informació de la fruita.
+    
+- Si consulto una fruita amb un **ID que no existeix**, el sistema ha de retornar un error **HTTP 404 Not Found**.
+    
+- Quan actualitzo una fruita existent (`PUT /fruits/{id}`) amb dades vàlides, el sistema ha de retornar un **HTTP 200 OK** i la fruita actualitzada.
+    
+- Si intento actualitzar una fruita que **no existeix**, el sistema ha de retornar un error **HTTP 404 Not Found**.
+    
+- Quan elimino una fruita existent (`DELETE /fruits/{id}`), el sistema ha de retornar un **HTTP 204 No Content**.
+    
+- Si intento eliminar una fruita amb un **ID inexistent**, el sistema ha de retornar un error **HTTP 404 Not Found**.
+
 ### 🧩 Enunciat
 
 Treballaràs amb una entitat anomenada **Fruit**, que tindrà les propietats següents:
