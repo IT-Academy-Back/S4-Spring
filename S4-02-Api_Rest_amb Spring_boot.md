@@ -71,7 +71,6 @@ Treballaràs amb una base de dades SQL **en memòria (H2)**, molt utilitzada en 
 **Criteris d’acceptació:**
 - Si les dades són vàlides, el sistema retorna HTTP 200 OK amb la fruita actualitzada.
 - Si l’ID no existeix, retorna HTTP 404 Not Found.
-- Si el nou nom ja existeix, retorna HTTP 409 Conflict.
 - Si les dades no són vàlides, retorna HTTP 400 Bad Request.
 
 #### 5. Eliminar una fruita
