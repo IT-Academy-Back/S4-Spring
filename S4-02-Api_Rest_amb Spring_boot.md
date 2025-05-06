@@ -157,6 +157,8 @@ La classe ubicada dins el package `controllers` (**FruitController**, per exempl
 
 - També hauràs de crear un `Dockerfile` per al projecte, que permeti construir una imatge preparada per a entorns de producció.
 
+-  **Opcional:** Pots complementar la tasca amb **tests d’integració** dels endpoints utilitzant `@SpringBootTest` i `MockMvc`, o/i  **tests unitaris** de serveis amb `Mockito`.
+
 ---
 
 ## ⭐⭐ Nivell 2 - Exercici CRUD amb MySQL
@@ -271,10 +273,16 @@ A més dels nous endpoints relacionats amb proveïdors, cal que tots els **endpo
 ### ⚠️ Important
 
 - Assegura’t de complir també amb tots els requisits no funcionals establerts al Nivell 1.
+
 - Utilitza **DTOs** per gestionar la informació d’entrada i sortida, evitant exposar directament les entitats del model.
+
 - Aplica **validacions** sobre els camps dels DTOs utilitzant anotacions com `@NotBlank`, `@Positive` o `@NotNull`, amb el suport de la llibreria de validació de Spring.
+
 - Crea un **Dockerfile** per empaquetar l’aplicació en una imatge Docker i permetre la configuració de la connexió a la base de dades mitjançant variables d'entorn.
+
 - Per facilitar l'entorn de desenvolupament, afegeix un fitxer **docker compose** per aixecar la infraestructura necessària, com ara el servei de base de dades MySQL.
+
+- **Opcional:** Pots complementar la tasca amb **tests d’integració** dels endpoints utilitzant `@SpringBootTest` i `MockMvc`, o/i  **tests unitaris** de serveis amb `Mockito`.
 
 ---
 
