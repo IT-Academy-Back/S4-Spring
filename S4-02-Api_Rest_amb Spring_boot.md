@@ -288,10 +288,79 @@ A més dels nous endpoints relacionats amb proveïdors, cal que tots els **endpo
 
 ## ⭐⭐⭐ Nivell 3 - Exercici CRUD amb MongoDB
 
+En aquest tercer projecte desenvoluparàs una **API REST per gestionar comandes de fruita** realitzades per clients, utilitzant MongoDB com a sistema de persistència.
+
+Cada comanda inclourà el **nom del client**, la **data de lliurament** i una llista de productes amb el seu nom i quantitat en quilos.
+
+Aquest projecte et servirà per practicar la persistència de documents en MongoDB utilitzant documents embeguts.
+
+---
+
+### 📖 Històries d’usuari i criteris d’acceptació
+
+#### 1. Crear una nova comanda
+
+> **Com a** client,  
+> **vull** fer una comanda indicant les fruites i quantitats que necessito,  
+> **per tal de** rebre la comanda el dia indicat.
+
+**Criteris d’acceptació:**
+- El client ha d’indicar el seu nom, la data i almenys una fruita.
+- Cada fruita ha de tenir nom i quantitat positiva.
+- Si la data és **anterior a demà**, es retorna **HTTP 400 Bad Request** amb un missatge d’error.
+- Retorna HTTP 201 Created amb la comanda guardada.
+
+
+#### 2. Consultar totes les comandes
+
+> **Com a** gestor de comandes,  
+> **vull** veure totes les comandes registrades,  
+> **per tal de** revisar l’activitat recent.
+
+**Criteris d’acceptació:**
+- Retorna HTTP 200 OK amb totes les comandes.
+- Si no n’hi ha, retorna una llista buida.
+
+
+#### 3. Consultar una comanda per ID
+
+> **Com a** gestor,  
+> **vull** consultar els detalls d’una comanda específica,  
+> **per tal de** revisar-ne el contingut.
+
+**Criteris d’acceptació:**
+- Si l’ID existeix, retorna HTTP 200 OK amb la comanda.
+- Si no, retorna HTTP 404 Not Found.
+
+
+#### 4. Modificar una comanda
+
+> **Com a** client,  
+> **vull** modificar una comanda ja feta si m’he equivocat,  
+> **per tal de** assegurar-me que arribi el que he demanat.
+
+**Criteris d’acceptació:**
+- Només es pot modificar si es proporciona un ID vàlid.
+- Si les dades són vàlides, retorna HTTP 200 OK.
+- Si l’ID no existeix, retorna 404.
+
+
+#### 5. Eliminar una comanda
+
+> **Com a** gestor,  
+> **vull** eliminar una comanda si ha estat cancel·lada,  
+> **per tal de** mantenir el sistema actualitzat.
+
+**Criteris d’acceptació:**
+- Si l’ID existeix, elimina la comanda i retorna HTTP 204 No Content.
+- Si no existeix, retorna HTTP 404 Not Found.
+
+
+---
+### ⚙️ Configuració del projecte
+
 Accedeix a 👉 [https://start.spring.io/](https://start.spring.io/) i genera un projecte Spring Boot amb les següents
 característiques:
-
-### ⚙️ Configuració del projecte
 
 | Paràmetre       | Valor                       |
 |-----------------|-----------------------------|
@@ -310,8 +379,41 @@ característiques:
 - Spring Boot DevTools
 - Spring Web
 - Spring Data MongoDB
+- Validation
 
-Has de fer el mateix que al nivell 1, però persistint les dades a MongoDB.
+### 🧩 Enunciat tècnic
+
+Treballaràs amb una entitat principal anomenada **Order**, que representarà una comanda de fruita realitzada per un client. Cada comanda estarà formada per:
+
+- El nom del client.
+- Una data de lliurament (que ha de ser com a mínim demà).
+- Una llista d’items, cada un amb el nom de la fruita i la quantitat en quilos.
+
+Utilitzaràs MongoDB per emmagatzemar cada comanda com **un únic document** dins la col·lecció `orders`.
+
+#### `Order` (document principal)
+
+```java
+String id;
+String clientName;
+LocalDate deliveryDate;
+List<OrderItem> items;
+```
+
+#### `OrderItem` (subdocument embegut)
+```java
+String fruitName;
+int quantityInKilos;
+```
+
+### 🌐 Endpoints mínims esperats
+| Mètode | Endpoint       | Descripció                              |
+| ------ | -------------- | --------------------------------------- |
+| POST   | `/orders`      | Crear una nova comanda                  |
+| GET    | `/orders`      | Llistar totes les comandes              |
+| GET    | `/orders/{id}` | Consultar una comanda per identificador |
+| PUT    | `/orders/{id}` | Actualitzar una comanda existent        |
+| DELETE | `/orders/{id}` | Eliminar una comanda                    |
 
 ---
 
