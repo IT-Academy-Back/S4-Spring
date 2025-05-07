@@ -22,7 +22,7 @@ A través d’aquestes pràctiques aprendràs a:
 ## ⭐ Nivell 1 — Exercici CRUD amb H2
 
 En aquest primer nivell desenvoluparàs una **API REST per gestionar l’estoc d’una fruiteria** mitjançant una aplicació backend construïda amb Spring Boot.  
-L’objectiu és poder **registrar, consultar, modificar i eliminar fruites**, cada una identificada pel seu nom i el seu pes en quilos.  
+L’objectiu és poder **registrar, consultar, modificar i eliminar entrades d’estoc de fruites**, cada una identificada pel seu nom i el seu pes en quilos.  
 Treballaràs amb una base de dades SQL **en memòria (H2)**, molt utilitzada en entorns de desenvolupament i proves per la seva rapidesa i simplicitat de configuració.
 
 ---
@@ -164,7 +164,7 @@ La classe ubicada dins el package `controllers` (**FruitController**, per exempl
 ## ⭐⭐ Nivell 2 - Exercici CRUD amb MySQL
 
 En aquest segon projecte ampliaràs la funcionalitat de l’aplicació anterior incorporant la gestió de **proveïdors de fruita**.  
-Cada fruita haurà d’estar associada a un proveïdor, fet que et permetrà registrar l’origen de cada producte i consultar quines fruites subministra cada empresa.
+Cada registre de fruita haurà d’estar associat a un proveïdor, fet que et permetrà registrar l’origen de cada producte i consultar quines fruites subministra cada empresa.
 
 Aquest nou projecte utilitzarà **MySQL** com a base de dades i introduirà una relació entre entitats mitjançant **JPA**, concretament una associació de tipus **@ManyToOne** entre `Fruit` i `Provider`.
 
@@ -316,3 +316,28 @@ Has de fer el mateix que al nivell 1, però persistint les dades a MongoDB.
 ---
 
 ## 📌 Recursos
+#### 🧱 Spring Boot i APIs REST
+
+- [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
+- [Building a RESTful Web Service (Spring Guides)](https://spring.io/guides/gs/rest-service/)
+- [Building REST services with Spring](https://spring.io/guides/tutorials/rest)
+- [Spring Web Annotations](https://www.baeldung.com/spring-mvc-annotations)
+
+#### 💾 Persistència de dades
+
+- [Spring Data JPA - Reference Documentation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)
+- [Spring Data MongoDB - Reference Documentation](https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/)
+- [Accessing MongoDB Data with REST](https://spring.io/guides/gs/accessing-mongodb-data-rest)
+- [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest)
+
+#### 🎯 Validació i DTOs
+
+- [Validation in Spring Boot (Baeldung)](https://www.baeldung.com/spring-boot-bean-validation)
+- [DTO Pattern - Baeldung](https://www.baeldung.com/java-dto-pattern)
+- [Entity To DTO Conversion - Baeldung](https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application)
+
+#### 🐳 Docker
+
+- [Docker Official Documentation](https://docs.docker.com/)
+- [Spring Boot with Docker (Spring Guides)](https://spring.io/guides/gs/spring-boot-docker)
+- [How To Dockerize A Spring Boot Application With Maven](https://www.geeksforgeeks.org/how-to-dockerize-a-spring-boot-application-with-maven/)
