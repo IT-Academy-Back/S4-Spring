@@ -157,7 +157,10 @@ La classe ubicada dins el package `controllers` (**FruitController**, per exempl
 
 - També hauràs de crear un `Dockerfile` per al projecte, que permeti construir una imatge preparada per a entorns de producció.
 
--  **Opcional:** Pots complementar la tasca amb **tests d’integració** dels endpoints utilitzant `@SpringBootTest` i `MockMvc`, o/i  **tests unitaris** de serveis amb `Mockito`.
+- Hauràs de desenvolupar el projecte seguint l’enfocament **TDD (Test-Driven Development)**.  És a dir, abans d’implementar cada funcionalitat, hauràs d’escriure el test corresponent que en defineixi el comportament esperat. Pots utilitzar:
+	- `@SpringBootTest` i `MockMvc` per provar els endpoints.
+	- `Mockito` per testejar els serveis de forma aïllada.
+
 
 ---
 
