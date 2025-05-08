@@ -286,7 +286,7 @@ A més dels nous endpoints relacionats amb proveïdors, cal que tots els **endpo
 
 - Aplica **validacions** sobre els camps dels DTOs utilitzant anotacions com `@NotBlank`, `@Positive` o `@NotNull`, amb el suport de la llibreria de validació de Spring.
 
-- Crea un **Dockerfile** per empaquetar l’aplicació en una imatge Docker i permetre la configuració de la connexió a la base de dades mitjançant variables d'entorn.
+- Utilitzant una **IA Generativa**, crea un `Dockerfile` per empaquetar l’aplicació en una imatge **Docker optimitzada per a producció**, permetent la **configuració de la connexió a la base de dades MySQL mitjançant variables d'entorn**.
 
 - Per facilitar l'entorn de desenvolupament, afegeix un fitxer **docker compose** per aixecar la infraestructura necessària, com ara el servei de base de dades MySQL.
 
