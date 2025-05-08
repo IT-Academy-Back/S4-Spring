@@ -22,7 +22,9 @@ A través d’aquestes pràctiques aprendràs a:
 ## ⭐ Nivell 1 — Exercici CRUD amb H2
 
 En aquest primer nivell desenvoluparàs una **API REST per gestionar l’estoc d’una fruiteria** mitjançant una aplicació backend construïda amb Spring Boot.  
-L’objectiu és poder **registrar, consultar, modificar i eliminar entrades d’estoc de fruites**, cada una identificada pel seu nom i el seu pes en quilos.  
+
+L’objectiu és permetre **gestionar les entrades d’estoc de fruita**, registrant per a cada una el nom del producte i el seu pes en quilos.
+
 Treballaràs amb una base de dades SQL **en memòria (H2)**, molt utilitzada en entorns de desenvolupament i proves per la seva rapidesa i simplicitat de configuració.
 
 ---
