@@ -155,7 +155,10 @@ La classe ubicada dins el package `controllers` (**FruitController**, per exempl
 
 - Hauràs d'implementar un GlobalExceptionHandler per gestionar les excepcions globalment a l'aplicació. Això permetrà capturar i tractar errors de manera centralitzada, millorant la robustesa i la coherència en la gestió de les excepcions.
 
-- També hauràs de crear un `Dockerfile` per al projecte, que permeti construir una imatge preparada per a entorns de producció.
+- Usant una **IA generativa**, hauràs de crear un `Dockerfile` per al projecte que permeti construir una imatge **optimitzada per a entorns de producció**. L’objectiu és entendre **línia per línia** com es genera una imatge mitjançant un **multi-stage build** dividit en dues etapes:
+	1. **Etapa de construcció:** compilar l’aplicació i generar l’arxiu `.jar`.
+	2. **Etapa final:** copiar només el `.jar` a una imatge lleugera per executar-lo en producció.
+
 
 - Hauràs de desenvolupar el projecte seguint l’enfocament **TDD (Test-Driven Development)**.  És a dir, abans d’implementar cada funcionalitat, hauràs d’escriure el test corresponent que en defineixi el comportament esperat. Pots utilitzar:
 	- `@SpringBootTest` i `MockMvc` per provar els endpoints.
