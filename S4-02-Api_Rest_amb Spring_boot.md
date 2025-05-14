@@ -10,6 +10,7 @@ A través d’aquestes pràctiques aprendràs a:
 - Gestionar la persistència de dades amb Spring Data JPA i Spring Data MongoDB.
 - Aplicar correctament els verbs HTTP (`GET`, `POST`, `PUT`, `DELETE`) i gestionar adequadament els codis d’estat de les respostes.
 - Implementar rutes dinàmiques amb **Path Params** i **Query Params**.
+- Escriure i executar **tests automatitzats** utilitzant **TDD (Test-Driven Development)** per assegurar el comportament esperat de la lògica i dels endpoints.
 - Gestionar les excepcions globalment mitjançant un `GlobalExceptionHandler`.
 - Estructurar correctament el projecte seguint el patró **MVC (Model-View-Controller)**.
 - Crear relacions entre entitats utilitzant **JPA**.
@@ -161,10 +162,9 @@ La classe ubicada dins el package `controllers` (**FruitController**, per exempl
 	1. **Etapa de construcció:** compilar l’aplicació i generar l’arxiu `.jar`.
 	2. **Etapa final:** copiar només el `.jar` a una imatge lleugera per executar-lo en producció.
 
-
 - Hauràs de desenvolupar el projecte seguint l’enfocament **TDD (Test-Driven Development)**.  És a dir, abans d’implementar cada funcionalitat, hauràs d’escriure el test corresponent que en defineixi el comportament esperat. Pots utilitzar:
-	- `@SpringBootTest` i `MockMvc` per provar els endpoints.
-	- `Mockito` per testejar els serveis de forma aïllada.
+	- `@SpringBootTest` amb `MockMvc`, o bé llibreries com **RestAssured**, per provar els endpoints REST.
+	- `Mockito` per testejar els serveis de forma aïllada (unit test).
 
 
 ---
