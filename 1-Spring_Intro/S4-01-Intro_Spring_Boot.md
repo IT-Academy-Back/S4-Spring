@@ -103,15 +103,6 @@ Aquest missatge indica que has afegit una nova funcionalitat (`feat`), en aquest
 
 ### 🔄 Millora: retornar JSON en comptes de text pla
 
-```json
-{
-  "data": {...},
-  "message": "...",
-  "timestamp": "..."
-}
-
-```
-
 Fins ara retornaves simplement un `String` amb el text `"OK"`. Tot i que és funcional, en el món real és molt més habitual que les APIs **retornin objectes JSON estructurats**.
 
 L’objectiu és que la teva resposta tingui aquest format:
