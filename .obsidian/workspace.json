@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "S4-02-Api_Rest_amb Spring_boot"
             }
-          },
-          {
-            "id": "920bb7863be54427",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1-Spring_Intro/S4-01-Intro_Spring_Boot (IN PROGRESS).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "S4-01-Intro_Spring_Boot (IN PROGRESS)"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -183,10 +168,11 @@
       "command-palette:Obre la paleta d'ordres": false
     }
   },
-  "active": "920bb7863be54427",
+  "active": "29fb3393353162af",
   "lastOpenFiles": [
-    "2-Spring_CRUD/S4-02-Api_Rest_amb Spring_boot.md",
     "1-Spring_Intro/S4-01-Intro_Spring_Boot (IN PROGRESS).md",
+    "1-Spring_Intro/S4-01-Intro_Spring_Boot.md",
+    "2-Spring_CRUD/S4-02-Api_Rest_amb Spring_boot.md",
     "1-Spring_Intro"
   ]
 }
