@@ -190,4 +190,186 @@ Spring Boot genera un arxiu `.jar` executable amb tot el necessari (incloent el 
 
 ---
 
-## ⭐⭐ Nivell 2
+## ⭐⭐ Nivell 2 — Gestionar una llista d’usuaris en memòria
+
+Ara que ja tens l’aplicació en marxa i respon correctament, és moment de començar a gestionar dades. En aquest nivell, crearàs una funcionalitat bàsica per **gestionar usuaris en memòria**, **sense base de dades**, mitjançant una **llista interna dins del controlador `UserController`**, que posteriorment refactoritzarem.
+
+Aquest exercici et permet practicar com enviar i rebre dades en format **JSON**, així com explorar diferents formes de passar informació a través d’un endpoint.
+
+---
+
+### 📋 Objectius
+
+- Retornar una **llista d’objectes** en format JSON.
+- Rebre dades des del **cos de la petició** mitjançant `@RequestBody`.
+- Generar **identificadors únics** amb `UUID`.
+- Accedir a valors dins la **ruta de l’URL** mitjançant `@PathVariable`.
+- Realitzar **filtres amb paràmetres de consulta** mitjançant `@RequestParam`.
+
+---
+
+## 👣 Passos a seguir
+
+> 📌 Fes un **commit per cada funcionalitat nova**, utilitzant el format de [Conventional Commits](https://www.conventionalcommits.org/) i assegurant-te que la descripció sigui clara i significativa.
+
+---
+
+### 1. Crear el model `User`
+
+Crea una classe `User` dins d’un paquet `models` o `entities` amb les següents propietats:
+
+- `id` (tipus `UUID`)
+- `name` (tipus `String`)
+- `email` (tipus `String`)
+
+---
+
+### 2. Simular una base de dades
+
+Crea un controlador anomenat `UserController`. Dins la classe, defineix com atribut una **llista estàtica** d’usuaris que actuarà com a memòria temporal. Aquesta llista representarà la nostra “base de dades” per aquest exercici. Inicialment, ha d’estar buida.
+
+---
+
+### 3. Endpoint `GET /users` — Llistar tots els usuaris
+
+Crea un endpoint que retorni la llista actual d’usuaris. Inicialment, aquest endpoint ha de respondre amb un array buit (`[]`).
+
+> 🧪 Prova-ho amb Postman: fes una petició GET a `http://localhost:9000/users` i comprova la resposta.
+
+---
+
+### 4. Endpoint `POST /users` — Crear un nou usuari
+
+Crea un endpoint que permeti afegir un usuari a la llista. Aquest endpoint ha de:
+
+- Rebre un JSON amb els camps `name` i `email` (usant `@RequestBody`).
+- Generar un `UUID` aleatori per al nou usuari.
+- Crear l’objecte `User` complet amb l’`id`, `name` i `email`.
+- Afegir-lo a la llista.
+- Retornar com a resposta l’usuari afegit.
+
+> 💡 **Per què fem servir `UUID`?**
+> 
+> Com que no tenim una base de dades que generi identificadors automàticament, utilitzem `UUID` com a forma senzilla i segura de generar **identificadors únics** des del codi.
+
+
+> 🧪 Prova-ho amb Postman: envia una petició POST amb un JSON com el seguent i comprova que reps una resposta amb un `id` generat:
+
+```json
+{ 
+	"name": "Ada Lovelace",
+	"email": "ada@example.com"
+}
+```
+
+
+> 🧪  Després, torna a fer una petició a `GET /users` i verifica que el nou usuari ja forma part de la llista.
+
+---
+### 5. Endpoint `GET /users/{id}` — Consultar un usuari per ID
+
+Afegirem un nou endpoint que permeti **recuperar un usuari concret** a partir del seu identificador únic.
+
+- Aquest endpoint utilitza `@PathVariable` per llegir l’`id` des de la ruta.
+- Buscarà a la llista l’usuari amb aquell `id`.
+- Si el troba, retornarà l’usuari com a JSON.
+- Si no el troba, pots retornar un codi de resposta `NotFound` (404). Usant `ResponseEntity<User>` coma resposta del mètode.
+
+> 🧪 Prova-ho amb Postman usant un `GET /users/{id}` amb un ID que s’hagi creat prèviament.
+
+---
+
+### 6. Endpoint `GET /users?name=...` — Filtrar usuaris per nom
+
+Millorarem l’endpoint existent de `GET /users` per permetre **cercar usuaris pel nom** mitjançant un **paràmetre de consulta opcional** a la URL, utilitzant `@RequestParam`.
+
+- Si no especifiques cap nom, es retornaran **tots els usuaris**.
+- Si afegeixes el paràmetre `?name=`, es filtraran els usuaris que **incloguin el text indicat** dins del camp `name` (la cerca no ha de distingir entre majúscules i minúscules).
+
+
+> 🧪 Prova-ho amb Postman usant una URL com: `GET http://localhost:9000/users?name=ada` 
+
+---
+
+### 🧪 7. Escriure tests per als endpoints
+
+Ara que hem implementat diversos endpoints en el nostre controlador, és el moment d’escriure **tests automàtics** per verificar que funcionen com esperem.
+
+Els tests que farem són de tipus **test de controladors** (o tests de capa web). No necessitem una base de dades ni serveis externs: només provarem que les rutes (`endpoints`) responen correctament davant diferents peticions.
+
+#### 🎯 Objectius del test
+
+- Assegurar que `GET /users` retorna una llista correcta.
+- Verificar que `POST /users` afegeix un usuari i retorna el resultat amb el seu `UUID`.
+- Comprovar que `GET /users/{id}` retorna l’usuari correcte si existeix.
+- Retornar error 404 si es demana un `id` que no existeix.
+- Validar que el filtre per nom `GET /users?name=` funciona com cal.
+
+---
+
+### 👨‍🔬 Què necessitaràs
+
+- Utilitzar `JUnit 5` per definir els tests. (Ja inclos a Spring boot test)
+- Utilitzar `MockMvc`, una eina que ens permet simular peticions HTTP dins dels tests.
+- Pots usar `ObjectMapper` per convertir objectes Java a JSON i viceversa.
+
+---
+
+### 👣 Passos per fer els tests
+
+1. **Crea una classe de test per `UserController`**
+2. **Anota la classe amb `@WebMvcTest(UserController.class)`**
+   Aquesta anotació carrega només la part web de Spring (no serveis ni base de dades), ideal per tests d’endpoints.
+3. **Crea un test per a cada funcionalitat clau** (Pots seguir la seguent guía per ferho)
+
+```java
+@WebMvcTest(UserController.class)
+class UserControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @Test
+    void getUsers_returnsEmptyListInitially() {
+        // Simula GET /users
+        // Espera un array buit
+    }
+
+    @Test
+    void createUser_returnsUserWithId() {
+        // Simula POST /users amb JSON
+        // Espera que torni el mateix usuari amb UUID no nul
+    }
+
+    @Test
+    void getUserById_returnsCorrectUser() {
+        // Primer afegeix un usuari amb POST
+        // Després GET /users/{id} i comprova que torni aquest usuari
+    }
+
+    @Test
+    void getUserById_returnsNotFoundIfMissing() {
+        // Simula GET /users/{id} amb un id aleatori
+        // Espera 404
+    }
+
+    @Test
+    void getUsers_withNameParam_returnsFilteredUsers() {
+        // Afegeix dos usuaris amb POST
+        // Fa GET /users?name=jo i comprova que només torni els que contenen "jo"
+    }
+}
+
+```
+
+### ✅ Bones pràctiques
+
+- Utilitza noms de test descriptius.
+- Fes servir `@BeforeEach` si vols netejar l'estat entre tests.
+- Comprova no només el codi de resposta (status code), sinó també el contingut del cos (`body`) de la resposta.
+
+---
+
