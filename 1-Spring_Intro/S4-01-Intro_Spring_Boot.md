@@ -87,8 +87,6 @@ Ara farem la mateixa prova usant **Postman**, un client REST per fer peticions H
 2. Crea una nova petició `GET` al mateix endpoint
 3. Prem **Send** i comprova que reps el text `OK` com a resposta.
 
-> 🧠 Tot i que aquest endpoint és molt senzill, segueix un patró molt habitual en entorns professionals: els health checks. Serveixen per verificar que l’aplicació està en marxa, i són especialment útils en entorns de producció i sistemes distribuïts.
-
 > ✅ Quan hagis confirmat que tot funciona correctament, fes un commit per no perdre els canvis. Recorda utilitzar el format de [**conventional commits**](https://www.conventionalcommits.org) i escriure un missatge clar i en anglès.
 
 📦 Exemple de commit:
@@ -96,8 +94,6 @@ Ara farem la mateixa prova usant **Postman**, un client REST per fer peticions H
 ```
 feat: add basic health check endpoint
 ```
-
-Aquest missatge indica que has afegit una nova funcionalitat (`feat`), en aquest cas un endpoint bàsic per verificar que l’aplicació funciona.
 
 ---
 
@@ -115,14 +111,14 @@ L’objectiu és que la teva resposta tingui aquest format:
 
 Això facilita la integració amb altres serveis, la monitorització, i manté una estructura coherent en tota l’API.
 
----
-
 ### 🛠️ Què has de fer?
 
 1. Crea una nova **classe o `record`** amb una propietat anomenada `status`. Jackson automàticament la convertirà a JSON.
 2. Modifica el teu `controller` perquè retorni una instància d’aquest objecte en lloc d’un `String`.
 
 > Un cop ho tinguis, torna a provar el teu endpoint i comprova que reps una resposta JSON amb status a "OK" i fes un altre commit que expliqui el que s’ha fet.
+
+--- 
 
 ### 🧪 Primer test bàsic del controlador
 
@@ -155,7 +151,42 @@ class HealthControllerTest {
 }
 ```
 
-> E**xecuta el test** des d’IntelliJ o amb Maven: `mvn test` Si el test passa, vol dir que la teva API ja pot ser comprovada automàticament. 👉🏽 Fes un commit amb un missatge clar com: `test: verify /health returns status OK`
+> **Executa el test** des d’IntelliJ o amb Maven: `mvn test` Si el test passa, vol dir que la teva API ja pot ser comprovada automàticament. 👉🏽 Fes un commit amb un missatge clar com: `test: verify /health returns status OK`
+
+---
+### 🚀 Executar la teva API com a `.jar`
+
+Spring Boot genera un arxiu `.jar` executable amb tot el necessari (incloent el servidor Tomcat) perquè puguis **executar la teva aplicació com si fos un programa independent**.
+
+#### 🛠️ Passos per empaquetar i executar
+
+1. Obre un terminal i col·loca’t a l’arrel del projecte.
+2. Executa la comanda següent per generar el `.jar`:
+
+   ```bash
+   mvn clean package
+   ```
+
+3. Si tot ha anat bé, trobaràs un arxiu `.jar` dins la carpeta `target/`. L’arxiu es dirà:
+
+   ```
+   userapi-0.0.1-SNAPSHOT.jar
+   ```
+
+4. Ara pots executar la teva aplicació amb:
+
+   ```bash
+   java -jar target/userapi-0.0.1-SNAPSHOT.jar
+   ```
+
+5. Un cop arrencada, torna al navegador o Postman i comprova que el teu endpoint `/health` segueix funcionant a:
+
+   ```
+   http://localhost:9000/health
+   ```
+
+> ✅ Fes una captura de pantalla de la terminal amb l'execució del `.jar` i guarda-la al teu repositori com a evidència del funcionament.
+
 
 ---
 
