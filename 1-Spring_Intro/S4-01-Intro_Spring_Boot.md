@@ -467,7 +467,7 @@ Un cop fet això, podràs modificar el controlador perquè **deixi de fer servir
 
 **Exemple: Diagrama de secuencia de crear un usuari**
 
-![[create_user_secuence.png]]
+<img src="./images/create_user_secuence.png">
 
 ### 4. Test unitari del servei — Amb Mockito
 
