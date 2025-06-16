@@ -1,4 +1,4 @@
-# Tasca S4.01 Introducció a Spring Boot [IN PROGRESS]
+# Tasca S4.01 Introducció a Spring Boot
 
 ## 🎯 Objectius
 
@@ -273,7 +273,7 @@ Afegirem un nou endpoint que permeti **recuperar un usuari concret** a partir de
 - Aquest endpoint utilitza `@PathVariable` per llegir l’`id` des de la ruta.
 - Buscarà a la llista l’usuari amb aquell `id`.
 - Si el troba, retornarà l’usuari com a JSON.
-- Si no el troba, pots retornar un codi de resposta `NotFound` (404). Usant `ResponseEntity<User>` coma resposta del mètode.
+- Si no el troba, pots retornar un codi de resposta `NotFound`(404). Això es pot fer de varies maneres ara et proposem usar una excepció en runtime personalitzada que pots anotar com `@ResponseStatus(HttpStatus.NOT_FOUND)`
 
 > 🧪 Prova-ho amb Postman usant un `GET /users/{id}` amb un ID que s’hagi creat prèviament.
 
