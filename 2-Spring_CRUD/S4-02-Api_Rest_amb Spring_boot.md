@@ -171,7 +171,7 @@ La classe ubicada dins el package `controllers` (**FruitController**, per exempl
 
 ## ⭐⭐ Nivell 2 - Exercici CRUD amb MySQL
 
-En aquest segon projecte ampliaràs la funcionalitat de l’aplicació anterior incorporant la gestió de **proveïdors de fruita**.  
+En aquest segon projecte ampliaràs la funcionalitat de l’aplicació anterior incorporant la gestió de **proveïdors de fruita** (pots partir del que ja teníes al Nivell 1).
 Cada registre de fruita haurà d’estar associat a un proveïdor, fet que et permetrà registrar l’origen de cada producte i consultar quines fruites subministra cada empresa.
 
 Aquest nou projecte utilitzarà **MySQL** com a base de dades i introduirà una relació entre entitats mitjançant **JPA**, concretament una associació de tipus **@ManyToOne** entre `Fruit` i `Provider`.
