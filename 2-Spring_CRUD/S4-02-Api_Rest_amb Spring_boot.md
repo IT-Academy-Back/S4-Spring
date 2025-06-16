@@ -31,6 +31,11 @@ Treballaràs amb una base de dades SQL **en memòria (H2)**, molt utilitzada en 
 ---
 ### 📖 Històries d'usuari i Criteris d'acceptació
 
+```
+⚠️ Et recomanem fer un seguiment de cada una de les següents històries d'usuari utilitzant un tauler Kanban (com GitHub Projects, Trello, etc.). A més, és bona pràctica fer un commit clar i descriptiu un cop completada cada història.
+```
+
+
 #### 1. Registrar una fruita nova
 
 > **Com a** responsable de l’inventari,  
