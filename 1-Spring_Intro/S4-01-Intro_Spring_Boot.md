@@ -13,7 +13,7 @@ Treballaràs amb els següents conceptes clau, que hauràs d’entendre i invest
 - Com **rebre dades JSON** a través del cos de la petició amb `@RequestBody`.
 - Com **retornar respostes** en format JSON.
 - Com **provar manualment** la teva API amb [Postman](https://www.postman.com/) (eina per enviar peticions HTTP).
-- Com **provar automàticament** la capa HTTP amb **MockMvc** i `@WebMvcTest`.
+- Com **provar automàticament** la aplicació amb **MockMvc**,  `@SpringBootTest` i usant **Mockito**
 - Com compilar i executar el `.jar` generat amb Maven (Spring Boot inclou el servidor integrat Apache Tomcat).
 - Què és el concepte d’**Inversió de Control (IoC)** i com es creen i injecten **Beans**.
 - Introducció a l’**arquitectura per capes**, i als patrons **Service Layer** i **Repository**.
