@@ -373,3 +373,165 @@ class UserControllerTest {
 
 ---
 
+## ⭐⭐⭐ Nivell 3 — Refactoritzar a una arquitectura per capes
+
+Ara que ja tens una API bàsica i funcional, és el moment de fer un pas endavant cap a un **disseny més net, professional i fàcil de mantenir**.
+
+Tot i que el nostre `UserController` funciona correctament, està assumint **massa responsabilitats**: controla les peticions HTTP, conté la lògica de negoci i accedeix directament a les dades. Això **viola diversos principis SOLID**, especialment:
+
+- **S** — _Single Responsibility Principle_: hauria de tenir una única responsabilitat (traduir peticions HTTP).
+- **D** — _Dependency Inversion Principle_: depèn directament de la implementació concreta de dades (una llista).
+
+Aquest enfocament **no és escalable**, complica el manteniment i fa més difícil afegir noves funcionalitats. Per això, reorganitzarem l’aplicació en una **arquitectura per capes**, separant clarament les responsabilitats:
+
+1. **Controlador (`UserController`)** → s'encarrega de rebre peticions HTTP i delegar al servei.
+2. **Servei (`UserService`)** → conté la lògica de negoci: les regles, validacions i processos de l'aplicació.
+3. **Repositori (`UserRepository`)** → és l'encarregat d'accedir a les dades (sigui a memòria, base de dades, etc.).
+
+---
+### 1. Convertim el test actual en un test d’integració (end-to-end)
+
+Abans de fer la refactorització, adaptarem el test que ja teníem per convertir-lo en un **test d’integració complet**, que provi totes les parts del sistema en conjunt: controlador, servei i repositori.
+
+#### 💡 Per què?
+
+Perquè volem assegurar-nos que, un cop comencem a moure i separar el codi, **tot segueix funcionant com abans**. Si trenquem alguna cosa durant el procés, el test ens avisarà. Això ens dona confiança per refactoritzar.
+
+#### 🛠️ Què cal fer?
+
+- Elimina l’anotació `@WebMvcTest`, que només carregava la capa web.
+- Afegeix `@SpringBootTest`, que carrega tota l’aplicació.
+- Afegeix `@AutoConfigureMockMvc`, per continuar fent peticions HTTP simulades amb `MockMvc`.
+
+> 🎯 L’objectiu d’aquest test és assegurar-nos que la integració entre capes funciona correctament, no pas cobrir tots els detalls.
+
+---
+### 2. El patró repositori
+
+Quan fem aplicacions amb dades (com usuaris), necessitem una manera d’accedir-hi i gestionar-les. Però **no volem que la resta del sistema sàpiga com ho fem exactament**. Podem estar treballant amb una llista en memòria, una base de dades, o llegint d’un arxiu. Això **no hauria de canviar la lògica de l’aplicació**.
+
+#### 🎯 Per això fem servir el **patró repositori**.
+
+Un **repositori** és una interfície (com un contracte) que defineix com accedim a les dades. La idea és separar completament la lògica de negoci (el servei) de la manera com guardem o llegim aquestes dades.
+
+Així, qualsevol capa que necessiti accedir a usuaris (per exemple, el `UserService`) **no sabrà ni li importa** si les dades venen d’una llista, d’una base de dades, o d’una API externa. Només cridarà els mètodes del repositori.
+
+#### ✍️ Com ho implementem
+
+**Primer crea la interfície `UserRepository`**, que defineix els mètodes bàsics que qualsevol repositori d’usuaris ha de tenir, per posar un exemple:
+
+```java
+public interface UserRepository {  
+    User save(User user);  
+    List<User> findAll();  
+    Optional<User> findById(UUID id);  
+    List<User> searchByName(String name);  
+    boolean existsByEmail(String email);  
+}
+```
+
+
+**Després fes una implementació concreta** d’aquesta interfície. Com que de moment no tenim base de dades, farem servir una llista en memòria. Aquesta implementació es dirà `InMemoryUserRepository` i contindrà realment el codi que manipula la llista d’usuaris.
+
+**Finalment, afageix l’anotació `@Repository` a la classe**. Això indica a Spring que aquesta classe s’ha d’incloure dins del seu contenidor de _beans_ 
+
+```
+🧠 Investiga què són els beans en Spring i com funciona la injecció de dependències.
+
+```
+
+---
+### 3. La capa de servei (Service Layer)
+
+Ara que ja tens el repositori separat, toca fer un pas molt important: **crear la capa de servei**, que serà el lloc on viurà la **lògica de negoci** de l’aplicació.
+
+#### 🧠 Per què cal una capa de servei?
+
+Encara que el controlador pot fer crides directament al repositori, no és bona pràctica. El controlador s’hauria d'encarregar només de rebre peticions i retornar respostes. La **lògica de l’aplicació**, les regles i els casos d’ús han de viure en un lloc central: el **servei**.
+
+Això et permetrà:
+
+- Reutilitzar la lògica des d’altres canals (web, REST, CLI…).
+- Tenir **tests unitaris més fàcils**, perquè pots provar el servei sense saber res de la web ni de les dades.
+- Aplicar regles de negoci de forma clara i centralitzada.
+
+#### 🛠️ Què has de fer?
+
+**Crea una interfície `UserService`**  i defineix-hi els casos d’ús que vols que el sistema ofereixi: crear un usuari, cercar per nom, obtenir per id, etc.
+
+**Crea una classe `UserServiceImpl`** que implementi aquesta interfície. Injecta per constructor la interface del repositori que ja tens creat, pasa la lògica que no sigui de dades ni web (http) a cada un dels mètodes del servei. **Sence fer cap accés directe a llistes dins el servei**   sino que sha de delegar ha a través del repositori: el servei no ha de saber com es guarden les dades, només que pot fer certes operacions.
+
+**Marca la classe amb `@Service`** per tal de que Spring la detecti i podrà injectar com a _bean_ a altres parts de l’aplicació com el controller.
+
+Un cop fet això, podràs modificar el controlador perquè **deixi de fer servir directament el repositori o la llista**, i en comptes d’això, **faci crides al servei**. d'igual manera injecta la interface el servei al controlador.
+
+**Exemple: Diagrama de secuencia de crear un usuari**
+
+![[create_user_secuence.png]]
+
+### 4. Test unitari del servei — Amb Mockito
+
+Un cop tenim la lògica de negoci separada a la capa de servei, podem començar a provar-la **de manera aïllada**, sense dependre de la implementació real del repositori (ni de llista en memòria, ni de base de dades). Per aconseguir-ho, farem servir **Mockito**, una llibreria que ens permet simular el comportament de les dependències.
+
+Això ens permetrà:
+
+- Simular què retorna el repositori (`when(...).thenReturn(...)`).
+- Comprovar que el servei fa el que toca davant diferents situacions.
+- Verificar que s’han cridat els mètodes esperats al repositori.
+
+L’objectiu és fer **tests unitaris reals**, centrats només en la lògica del servei.
+
+#### 👤 Cas d’ús: crear un usuari amb validació de correu únic
+
+Ara que la lògica de negoci està ben separada, és el moment ideal per afegir una **regla de negoci fonamental**: evitar duplicats de correu electrònic.
+
+Implementarem aquesta funcionalitat seguint l’enfocament de **TDD (Test-Driven Development)**, que consisteix a escriure primer el test i després el codi que el fa passar.
+
+---
+
+#### ✅ Què haurà de fer aquest mètode?
+
+Quan es vulgui crear un usuari, el servei haurà de:
+
+1. **Comprovar si ja existeix un usuari amb aquell correu**.
+2. Si ja existeix → **llançar una excepció** (pots crear una classe com `EmailAlreadyExistsException`).
+3. Si no existeix → **generar un UUID nou**, afegir-lo a l’usuari i **guardar-lo**.
+
+#### 🧪 Escriu primer el test (TDD)
+
+El primer pas serà escriure un **test unitari** que comprovi aquesta regla de negoci. Gràcies a Mockito, podem simular el comportament del repositori per crear diferents situacions.
+
+#### 🎯 Exemple del test
+
+```java
+@ExtendWith(MockitoExtension.class)  
+class UserServiceTest {  
+  
+    @Mock  
+    private UserRepository userRepository;  
+  
+    @InjectMocks  
+    private UserService userService;  
+  
+    @Test  
+    void shouldThrowExceptionWhenEmailAlreadyExists() {  
+	    //Given: 
+	    // - Ja existeix un usuari amb l’email "ada@lovelace.com"  
+		//When: 
+		// - Intento crear un altre usuari amb el mateix email  
+		//Then: 
+		// - Es llança una excepció `EmailAlreadyExistsException`
+        // - Verifica que NO s’ha cridat save ni cap altra operació  
+    }}
+```
+
+
+#### 📌 Consells pràctics
+
+- Declara el repositori com a `@Mock` i injecta’l al servei amb `@InjectMocks`.
+- Fes un primer test que esperi l’excepció si l’email ja està registrat.
+- Fes un segon test que comprovi que:
+	- Es genera un UUID.
+	- L’usuari es desa correctament si l’email no està repetit.
+
+---
