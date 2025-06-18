@@ -18,6 +18,8 @@ Treballaràs amb els següents conceptes clau, que hauràs d’entendre i invest
 - Què és el concepte d’**Inversió de Control (IoC)** i com es creen i injecten **Beans**.
 - Introducció a l’**arquitectura per capes**, i als patrons **Service Layer** i **Repository**.
 
+Com que aquests són conceptes fonamentals en l’ús de Spring Boot, et recomanem que, en aquesta tasca, desenvolupis els tres nivells.
+
 ### 🧱 Configuració del projecte
 
 Crea el projecte a 👉 [https://start.spring.io/](https://start.spring.io/) amb els següents valors:
