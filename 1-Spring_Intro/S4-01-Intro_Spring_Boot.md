@@ -30,14 +30,14 @@ Crea el projecte a 👉 [https://start.spring.io/](https://start.spring.io/) amb
 | **PROJECT**      | Maven                                              |
 | **LANGUAGE**     | Java                                               |
 | **SPRING BOOT**  | La darrera versió estable                          |
-| **Group**        | `cat.itacademy.s04.t01.n01`                        |
+| **Group**        | `cat.itacademy.s04.t01`                        |
 | **Artifact**     | `userapi`                                          |
-| **Name**         | `UserAPI`                                          |
-| **Description**  | `Primera API d'usuaris`                            |
-| **Package name** | `cat.itacademy.s04.t01.n01.userapi`                |
+| **Name**         | `UserApi`                                          |
+| **Description**  | `My first user manager REST API`                            |
+| **Package name** | `cat.itacademy.s04.t01.userapi`                |
 | **PACKAGING**    | Jar                                                |
 | **JAVA**         | Versió 21                                          |
-| **Dependències** | Spring Web, Spring Boot DevTools, Spring Boot Test |
+| **Dependències** | Spring Web, Spring Boot DevTools |
 
 ---
 
