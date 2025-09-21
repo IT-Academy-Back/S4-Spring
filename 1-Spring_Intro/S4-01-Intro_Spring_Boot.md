@@ -154,6 +154,15 @@ class HealthControllerTest {
 }
 ```
 
+Al importar `get()`, `status()` i `jsonPath()`, fixa’t bé que s’importin de manera estàtica i dels **paquets correctes**:
+
+```java
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;  
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;  
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+```
+
+
 > **Executa el test** des d’IntelliJ o amb Maven: `mvn test` Si el test passa, vol dir que la teva API ja pot ser comprovada automàticament. 👉🏽 Fes un commit amb un missatge clar com: `test: verify /health returns status OK`
 
 ---
