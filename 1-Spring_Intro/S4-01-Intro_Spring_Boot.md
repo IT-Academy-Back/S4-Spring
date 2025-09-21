@@ -5,7 +5,7 @@
 Aquest exercici és la teva primera presa de contacte amb **Spring Boot** i el desenvolupament d’una **API REST**.
 L’objectiu és construir una API mínima però funcional, que permeti rebre i retornar dades en format **JSON**, utilitzant mètodes HTTP i aplicant bones pràctiques des del primer moment.
 
-Treballaràs amb els següents conceptes clau, que hauràs d’entendre i investigar:
+Treballaràs amb els següents conceptes clau, que **hauràs d’entendre i investigar:**
 
 - Què és una **API REST** i com funciona.
 - Com definir **endpoints** a través de controladors amb `@RestController`.
