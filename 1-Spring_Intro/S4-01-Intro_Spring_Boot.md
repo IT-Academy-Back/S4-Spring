@@ -198,6 +198,7 @@ Spring Boot genera un arxiu `.jar` executable amb tot el necessari (incloent el 
    ```
 
 > ✅ Fes una captura de pantalla de la terminal amb l'execució del `.jar` i guarda-la al teu repositori com a evidència del funcionament.
+> ✅ Un cop feta la captura, tanca el servidor prement `Ctrl + C` a la terminal.
 
 
 ---
