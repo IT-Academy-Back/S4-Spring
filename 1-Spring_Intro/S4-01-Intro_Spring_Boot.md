@@ -480,6 +480,10 @@ Això et permetrà:
 
 Un cop fet això, podràs modificar el controlador perquè **deixi de fer servir directament el repositori o la llista**, i en comptes d’això, **faci crides al servei**. d'igual manera injecta la interface el servei al controlador.
 
+```
+🧪 Important! Fes passar els tests d’integració per assegurar-te que tot continua funcionant.
+```
+
 **Exemple: Diagrama de secuencia de crear un usuari**
 
 <img src="./images/create_user_secuence.png">
