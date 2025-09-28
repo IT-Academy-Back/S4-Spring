@@ -567,4 +567,9 @@ class UserServiceImplTest {
 	- Es genera un UUID.
 	- L’usuari es desa correctament si l’email no està repetit.
 
+```
+🧪 Per finalitzar, executa tots els tests amb cobertura i fixa’t en que es mostren les classes, les línies i les branques cobertes. Pots afegir tests addicionals si ho consideres necessari.
+```
+
+
 ---
