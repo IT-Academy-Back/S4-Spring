@@ -523,25 +523,39 @@ El primer pas serà escriure un **test unitari** que comprovi aquesta regla de n
 #### 🎯 Exemple del test
 
 ```java
-@ExtendWith(MockitoExtension.class)  
-class UserServiceTest {  
-  
-    @Mock  
-    private UserRepository userRepository;  
-  
-    @InjectMocks  
-    private UserService userService;  
-  
-    @Test  
-    void shouldThrowExceptionWhenEmailAlreadyExists() {  
-	    //Given: 
-	    // - Ja existeix un usuari amb l’email "ada@lovelace.com"  
-		//When: 
-		// - Intento crear un altre usuari amb el mateix email  
-		//Then: 
-		// - Es llança una excepció `EmailAlreadyExistsException`
-        // - Verifica que NO s’ha cridat save ni cap altra operació  
-    }}
+
+// Indiquem a JUnit que utilitzi l’extensió de Mockito.
+// Això permet que les anotacions @Mock i @InjectMocks funcionin.
+
+@ExtendWith(MockitoExtension.class)
+class UserServiceImplTest {
+
+    // Simulem el repositori. Així no cal base de dades real.
+    @Mock
+    private UserRepository userRepository;
+
+    // Creem una instància real de la classe a provar (UserServiceImpl).
+    // Els mocks definits a dalt s’injectaran aquí automàticament.
+    
+    @InjectMocks
+    private UserServiceImpl userService;
+
+
+    // ERROR PATH
+    // Volem comprovar què passa quan l’email ja existeix.
+    @Test
+    void createUser_shouldThrowExceptionWhenEmailAlreadyExists() {
+        // GIVEN:
+        // - El repositori retorna true quan comprovem si existeix l’email
+
+        // WHEN:
+        // - Intentem crear un usuari amb aquest email usant el Servei
+
+        // THEN:
+        // - Comprovar que es llança una excepció EmailAlreadyExistsException
+        // - Verificar que NO s’ha cridat al mètode save() del repository
+    }
+}
 ```
 
 
