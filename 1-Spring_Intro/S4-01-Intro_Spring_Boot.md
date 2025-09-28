@@ -451,6 +451,8 @@ public interface UserRepository {
 ```
 🧠 Investiga què són els beans en Spring i com funciona la injecció de dependències.
 
+🧪 Fes els tests de InMemoryUserRepository per assegurar-te que tot funciona correctament.
+
 ```
 
 ---
