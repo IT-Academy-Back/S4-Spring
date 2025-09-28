@@ -135,7 +135,7 @@ A continuació tens un exemple complet del test **amb comentaris** perquè enten
 
 ```java
 // Indiquem que aquest test només carrega la capa web (controladors)
-@WebMvcTest
+@WebMvcTest(HealthController.class)
 class HealthControllerTest {
 
     // Injectem MockMvc, que ens permet simular peticions HTTP
