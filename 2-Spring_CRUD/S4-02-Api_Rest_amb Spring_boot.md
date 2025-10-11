@@ -102,13 +102,13 @@ característiques:
 |-----------------|-----------------------------|
 | PROJECT         | Maven o Gradle              |
 | LANGUAGE        | Java                        |
-| SPRING BOOT     | La darrera versió estable   |
+| SPRING BOOT     | 3.x.x (latest stable)   |
 | Group           | `cat.itacademy.s04.t02.n01` |
-| Artifact / Name | `S04T02N01`                 |
-| Description     | `S04T02N01GognomsNom`       |
-| Package name    | `cat.itacademy.s04.t02.n01` |
+| Artifact / Name | `fruit-api-h2`                 |
+| Description     | `REST API for managing fruit stock with H2`       |
+| Package name    | `cat.itacademy.s04.s02.n01.fruit` |
 | PACKAGING       | Jar                         |
-| JAVA            | Mínim versió 21             |
+| JAVA            | 21 (LTS)             |
 
 ### 📦 Dependències
 
