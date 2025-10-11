@@ -117,6 +117,7 @@ característiques:
 - Spring Data JPA
 - H2 Database
 - Validation
+- Lombok (opcional, però recomanat per reduir codi boilerplate)
 
 ----
 
