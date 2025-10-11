@@ -134,6 +134,8 @@ int weightInKilos
 
 Aprofitant l'especificació **JPA**, hauràs de persistir aquesta entitat en una base de dades **H2**, seguint l'arquitectura **MVC**.  
 
+Recorda que JPA s’encarregarà de generar automàticament la taula i els valors de l’ID per a cada fruita, utilitzant l’anotació ```@Id``` juntament amb ```@GeneratedValue```.
+
 Organitza el projecte creant els packages següents, segons el teu package principal:
 
 ```
