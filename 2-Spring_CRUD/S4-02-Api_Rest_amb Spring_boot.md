@@ -164,6 +164,8 @@ La classe ubicada dins el package `controllers` (**FruitController**, per exempl
 
 - Hauràs de tenir en compte les bones pràctiques de disseny de les API, fent servir correctament els codis d'error i les respostes en cas d'invocacions incorrectes. (Pots consultar informació sobre ResponseEntity).
 
+- Hauràs d’evitar exposar directament les entitats JPA als controladors, utilitzant el patró DTO per gestionar les dades d’entrada i sortida, i validant-les amb anotacions de Bean Validation com ```@NotBlank```, ```@NotNull``` o ```@Positive```.
+
 - Hauràs d'implementar un GlobalExceptionHandler per gestionar les excepcions globalment a l'aplicació. Això permetrà capturar i tractar errors de manera centralitzada, millorant la robustesa i la coherència en la gestió de les excepcions.
 
 - Usant una **IA generativa**, hauràs de crear un `Dockerfile` per al projecte que permeti construir una imatge **optimitzada per a entorns de producció**. L’objectiu és entendre **línia per línia** com es genera una imatge mitjançant un **multi-stage build** dividit en dues etapes:
