@@ -410,11 +410,11 @@ característiques:
 | LANGUAGE        | Java                        |
 | SPRING BOOT     | La darrera versió estable   |
 | Group           | `cat.itacademy.s04.t02.n03` |
-| Artifact / Name | `S04T02N03`                 |
-| Description     | `S04T02N03`                 |
-| Package name    | `cat.itacademy.s04.t02.n03` |
+| Artifact / Name | `fruit-order-api`                 |
+| Description     | `API per gestionar comandes de fruita`                 |
+| Package name    | `cat.itacademy.s04.t02.n03.fruit` |
 | PACKAGING       | Jar                         |
-| JAVA            | Mínim versió 21             |
+| JAVA            | 21 (LTS)             |
 
 ### 📦 Dependències
 
