@@ -281,9 +281,10 @@ Has de persistir aquestes entitats a una base de dades **MySQL**, gestionant la 
 | ------ | ------------------------- | ------------------------------ |
 | POST   | `/providers`              | Crear proveïdor                |
 | GET    | `/providers`              | Llistar proveïdors             |
-| POST   | `/fruits`                 | Crear fruita amb proveïdor     |
+| PUT    | `/providers/{id}`         | Actualitzar proveïdor           |
 | GET    | `/fruits?providerId={id}` | Obtenir fruites d’un proveïdor |
-| GET    | `/fruits`                 | Llistar totes les fruites      |
+| DELETE | `/providers/{id}`         | Eliminar proveïdor              |
+
 
 A més dels nous endpoints relacionats amb proveïdors, cal que tots els **endpoints del Nivell 1** continuïn funcionant correctament amb la nova estructura de dades.
 
