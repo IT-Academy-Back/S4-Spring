@@ -236,11 +236,11 @@ característiques:
 | LANGUAGE        | Java                        |
 | SPRING BOOT     | La darrera versió estable   |
 | Group           | `cat.itacademy.s04.t02.n02` |
-| Artifact / Name | `S04T02N02`                 |
-| Description     | `S04T02N02`                 |
-| Package name    | `cat.itacademy.s04.t02.n02` |
+| Artifact / Name | `fruit-api-MySQL`                 |
+| Description     | `REST API for managing fruit stock with MySQL`                 |
+| Package name    | `cat.itacademy.s04.t02.n02.fruit` |
 | PACKAGING       | Jar                         |
-| JAVA            | Mínim versió 21             |
+| JAVA            | 21 (LTS)                   |
 
 ### 📦 Dependències
 
@@ -249,6 +249,7 @@ característiques:
 - Spring Data JPA
 - MySQL Driver
 - Validation
+- Lombok (opcional)
 
 ### 🧩 Enunciat tècnic
 
