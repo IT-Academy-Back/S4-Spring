@@ -224,6 +224,28 @@ Aquest nou projecte utilitzarà **MySQL** com a base de dades i introduirà una 
 - Si el proveïdor existeix, es retorna HTTP 200 OK amb les fruites.
 - Si no existeix, es retorna HTTP 404 Not Found.
 
+#### 4. Actualitzar un proveïdor
+> **Com a** responsable de compres,
+> **vull** poder actualitzar la informació d’un proveïdor,
+> **per tal de** mantenir les dades correctes i actualitzades.
+
+**Criteris d’acceptació:**
+- Si l’ID del proveïdor existeix, es poden actualitzar el nom i el país.
+- Si les dades són vàlides, es retorna HTTP 200 OK amb el proveïdor actualitzat.
+- Si l’ID no existeix, es retorna HTTP 404 Not Found.
+- No es poden actualitzar proveïdors amb el nom buit o que ja existeixi.
+
+#### 5. Eliminar un proveïdor
+> **Com a** responsable de compres,
+> **vull** poder eliminar un proveïdor,
+> **per tal de** mantenir la base de dades neta i actualitzada.
+
+**Criteris d’acceptació:**
+- Si l’ID del proveïdor existeix i no té fruites associades, es pot eliminar.
+- Si l’eliminació és correcta, es retorna HTTP 204 No Content.
+- Si l’ID no existeix, es retorna HTTP 404 Not Found.
+- Si el proveïdor té fruites associades, no es pot eliminar i es retorna HTTP 400 Bad Request amb un missatge indicatiu.
+
 ---
 ### ⚙️ Configuració del projecte
 
