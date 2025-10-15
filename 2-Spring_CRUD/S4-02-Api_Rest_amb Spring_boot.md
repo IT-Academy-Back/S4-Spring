@@ -198,7 +198,7 @@ Aquest nou projecte utilitzarà **MySQL** com a base de dades i introduirà una 
 
 **Criteris d’acceptació:**
 - El sistema ha de permetre registrar proveïdors amb nom i país.
-- No es poden registrar proveïdors amb el nom en blanc.
+- No es poden registrar proveïdors amb el mateix nom ni amb el nom buit.
 - Si el proveïdor s’ha registrat correctament, es retorna HTTP 201 Created.
 
 #### 2. Afegir una fruita amb proveïdor
