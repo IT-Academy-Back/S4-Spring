@@ -151,7 +151,7 @@ Punts importants:
 - Tractament d’errors de format
 
 **Recursos recomanats:**  
-- https://www.baeldung.com/jackson-object-mapper  
+- https://www.baeldung.com/jackson-object-mapper-tutorial
 - https://www.baeldung.com/spring-boot-json  
 
 ---
@@ -165,7 +165,6 @@ Maven gestiona:
 
 **Recursos recomanats:**  
 - https://maven.apache.org/guides/getting-started/  
-- https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/  
 
 ---
 
@@ -192,7 +191,7 @@ Hauràs d’escriure tres tipus de tests:
 `@WebMvcTest` + MockMvc  
 → Permeten provar només la capa web sense arrencar tota l’aplicació.
 
-### 2) Tests d’integració  
+### 2) Tests d’integració o acceptació 
 `@SpringBootTest` + `@AutoConfigureMockMvc`  
 → Simulen peticions HTTP i proven totes les capes juntes.
 
@@ -216,7 +215,7 @@ Documentació: https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html
 
 ### Lombok (opcional)  
 Evita escriure getters, setters i constructors manualment.  
-https://projectlombok.org/features/
+https://projectlombok.org/
 
 ---
 
