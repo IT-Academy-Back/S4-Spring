@@ -132,8 +132,11 @@ Una bona pràctica en aplicacions Spring és separar clarament les responsabilit
 Això millora la testabilitat i facilita el manteniment.
 
 **Recursos recomanats:**  
-- https://www.baeldung.com/spring-boot-layered-architecture  
-- https://www.geeksforgeeks.org/spring-boot-controller-service-repository/  
+- **[Spring Boot Code Structure](https://www.geeksforgeeks.org/java/spring-boot-code-structure/)**
+- **[Spring Boot – Architecture (GeeksforGeeks)](https://www.geeksforgeeks.org/spring-boot-architecture/)**  
+- **[Understanding Controller, Service, and Repository in Spring Boot](https://www.compilemymind.com/posts/spring-boot-layered-architecture/)**  
+
+
 
 ---
 
