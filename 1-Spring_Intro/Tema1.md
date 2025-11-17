@@ -1,6 +1,6 @@
 # Tema 1: Introducció a Spring Boot
 
-Aquest tema et proporciona una base clara per entendre què és una API REST i com es desenvolupa una aplicació amb **Spring Boot**. L’objectiu és que tinguis una visió general sòlida abans de començar a programar, i que disposis de recursos útils per aprofundir quan sigui necessari.
+Aquest tema t’introdueix als conceptes fonamentals per entendre què és una API REST i com es crea una aplicació amb Spring Boot. L’objectiu és oferir-te una visió sòlida del funcionament d’aquest tipus d’aplicacions abans de començar a programar, i posar-te a l’abast recursos fiables que et permetin aprofundir i consolidar els coneixements quan ho necessitis.
 
 ---
 
