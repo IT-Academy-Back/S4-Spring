@@ -29,7 +29,7 @@ Crea el projecte a 👉 [https://start.spring.io/](https://start.spring.io/) amb
 | ---------------- | -------------------------------------------------- |
 | **PROJECT**      | Maven                                              |
 | **LANGUAGE**     | Java                                               |
-| **SPRING BOOT**  | La darrera versió estable                          |
+| **SPRING BOOT**  | La darrera versió estable de la v3.x.x  		  |
 | **Group**        | `cat.itacademy.s04.t01`                        |
 | **Artifact**     | `userapi`                                          |
 | **Name**         | `UserApi`                                          |
