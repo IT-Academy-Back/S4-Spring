@@ -256,7 +256,7 @@ característiques:
 |-----------------|-----------------------------|
 | PROJECT         | Maven o Gradle              |
 | LANGUAGE        | Java                        |
-| SPRING BOOT     | La darrera versió estable   |
+| SPRING BOOT     | 3.x.x (latest stable)   |
 | Group           | `cat.itacademy.s04.t02.n02` |
 | Artifact / Name | `fruit-api-MySQL`                 |
 | Description     | `REST API for managing fruit stock with MySQL`                 |
@@ -408,7 +408,7 @@ característiques:
 |-----------------|-----------------------------|
 | PROJECT         | Maven o Gradle              |
 | LANGUAGE        | Java                        |
-| SPRING BOOT     | La darrera versió estable   |
+| SPRING BOOT     | 3.x.x (latest stable)   |
 | Group           | `cat.itacademy.s04.t02.n03` |
 | Artifact / Name | `fruit-order-api`                 |
 | Description     | `API per gestionar comandes de fruita`                 |
