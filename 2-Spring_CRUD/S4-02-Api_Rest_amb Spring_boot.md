@@ -244,7 +244,7 @@ Aquest nou projecte utilitzarà **MySQL** com a base de dades i introduirà una 
 - Si l’ID del proveïdor existeix i no té fruites associades, es pot eliminar.
 - Si l’eliminació és correcta, es retorna HTTP 204 No Content.
 - Si l’ID no existeix, es retorna HTTP 404 Not Found.
-- Si el proveïdor té fruites associades, no es pot eliminar i es retorna HTTP 400 Bad Request amb un missatge indicatiu.
+- Si el proveïdor té fruites associades, no es pot eliminar i es retorna HTTP 409 Conflict amb un missatge indicatiu.
 
 ---
 ### ⚙️ Configuració del projecte
