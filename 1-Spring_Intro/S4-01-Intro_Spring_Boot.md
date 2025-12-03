@@ -412,6 +412,7 @@ Perquè volem assegurar-nos que, un cop comencem a moure i separar el codi, **to
 
 #### 🛠️ Què cal fer?
 
+- Canvia el nom de la classe de test per alguna cosa com `UserAcceptanceTest` o `UserIntegrationTest`.
 - Elimina l’anotació `@WebMvcTest`, que només carregava la capa web.
 - Afegeix `@SpringBootTest`, que carrega tota l’aplicació.
 - Afegeix `@AutoConfigureMockMvc`, per continuar fent peticions HTTP simulades amb `MockMvc`.
